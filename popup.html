@@ -109,7 +109,7 @@
 
     <div id="solve_and_push_phase" style="display: none">
       <div id="sync_mode_control">
-        <span id="sync_mode_text">Auto-Commit</span>
+        <span id="sync_mode_text">Auto-Commit:</span>
         <label class="switch" for="sync_mode_toggle">
           <input type="checkbox" id="sync_mode_toggle" />
           <span class="slider round"></span>
@@ -117,7 +117,7 @@
         <span id="sync_mode_label">Manual</span>
       </div>
       <p class="instructions" id="summary_count">
-        Solved <span id="successful_submissions">0</span>
+        Solved: <span id="successful_submissions">0</span>
       </p>
       <div class="solved" id="difficulty_chips">
         <span class="diff_chip chip-basic"
@@ -147,7 +147,8 @@
       </div>
       <div id="commit_message_section">
         <button id="commit_message_toggle" type="button">
-          Customize Commit Message
+          <span class="commit-toggle-icon" aria-hidden="true"></span>
+          <span>Customize Commit Message</span>
         </button>
         <div id="commit_message_body" style="display: none">
           <textarea
@@ -191,7 +192,7 @@
           ><img id="mail_logo" src="./assets/mail_light.png" alt="Mail" /></a
       ></span>
     </div>
-    <div class="footer-note">Made with ♥ </div>
+    <div class="footer-note">Made with ♥</div>
     <script src="scripts/darkmode.js"></script>
     <script src="scripts/githubAuthentication.js"></script>
     <script type="text/javascript" src="popup.js"></script>

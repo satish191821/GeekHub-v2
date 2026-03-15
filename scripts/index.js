@@ -7,13 +7,22 @@ const applyIndexDarkMode = (isDark) => {
   document.body.classList.toggle("dark-mode", isDark);
 };
 
+const applyIndexUserStatistics = (userStatistics) => {
+  const stats = userStatistics || {};
+  $("#successful_submissions").text(stats.solved || 0);
+  $("#successful_submissions_basic").text(stats.basic || 0);
+  $("#successful_submissions_easy").text(stats.easy || 0);
+  $("#successful_submissions_medium").text(stats.medium || 0);
+  $("#successful_submissions_hard").text(stats.hard || 0);
+};
+
 const syncIndexDarkModeFromStorage = () => {
   chrome.storage.local.get(["darkmodeFlag"], (data) => {
-    const isDarkByDefault = !data || data.darkmodeFlag === undefined;
-    const isDark = isDarkByDefault || data.darkmodeFlag === 1;
+    const isUnset = !data || data.darkmodeFlag === undefined;
+    const isDark = data && data.darkmodeFlag === 1;
 
-    if (isDarkByDefault) {
-      chrome.storage.local.set({ darkmodeFlag: 1 }, () => {});
+    if (isUnset) {
+      chrome.storage.local.set({ darkmodeFlag: 0 }, () => {});
     }
 
     applyIndexDarkMode(isDark);
@@ -23,8 +32,13 @@ const syncIndexDarkModeFromStorage = () => {
 syncIndexDarkModeFromStorage();
 
 chrome.storage.onChanged.addListener((changes, areaName) => {
-  if (areaName !== "local" || !changes.darkmodeFlag) return;
-  applyIndexDarkMode(changes.darkmodeFlag.newValue === 1);
+  if (areaName !== "local") return;
+  if (changes.darkmodeFlag) {
+    applyIndexDarkMode(changes.darkmodeFlag.newValue === 1);
+  }
+  if (changes.userStatistics) {
+    applyIndexUserStatistics(changes.userStatistics.newValue);
+  }
 });
 
 const githubRepository = () => {
@@ -244,15 +258,7 @@ const linkRepo = (accessToken, repositoryName) => {
               console.log("Linked Repository Successfully");
               chrome.storage.local.get("userStatistics", (solvedProblems) => {
                 const { userStatistics } = solvedProblems;
-                if (userStatistics && userStatistics.solved) {
-                  $("#successful_submissions").text(userStatistics.solved);
-                  $("#successful_submissions_basic").text(userStatistics.basic);
-                  $("#successful_submissions_easy").text(userStatistics.easy);
-                  $("#successful_submissions_medium").text(
-                    userStatistics.medium,
-                  );
-                  $("#successful_submissions_hard").text(userStatistics.hard);
-                }
+                applyIndexUserStatistics(userStatistics);
               });
             },
           );

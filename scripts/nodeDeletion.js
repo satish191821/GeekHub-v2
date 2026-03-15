@@ -1,4 +1,8 @@
-const removeChildScript = `
+(() => {
+  if (window.__geekhubNodeDeletionInjected) return;
+  window.__geekhubNodeDeletionInjected = true;
+
+  const removeChildScript = `
 	(function () {
 		var extractedNode = document.getElementById("extractedUserSolution");
 		if (extractedNode && extractedNode.parentNode) {
@@ -17,10 +21,11 @@ const removeChildScript = `
 	})();
 `;
 
-var deleteScript = document.createElement("script");
-deleteScript.id = "deletionScript";
-deleteScript.appendChild(document.createTextNode(removeChildScript));
+  var deleteScript = document.createElement("script");
+  deleteScript.id = "deletionScript";
+  deleteScript.appendChild(document.createTextNode(removeChildScript));
 
-(document.body || document.head || document.documentElement).appendChild(
-  deleteScript,
-);
+  (document.body || document.head || document.documentElement).appendChild(
+    deleteScript,
+  );
+})();
