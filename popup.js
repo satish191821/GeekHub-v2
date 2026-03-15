@@ -322,6 +322,8 @@ if (commitMessageToggle && commitMessageBody) {
   commitMessageToggle.addEventListener("click", () => {
     isCommitMessageOpen = !isCommitMessageOpen;
     commitMessageBody.style.display = isCommitMessageOpen ? "flex" : "none";
+    document.body.classList.toggle("commit-message-open", isCommitMessageOpen);
+    commitMessageToggle.classList.toggle("is-open", isCommitMessageOpen);
   });
 }
 
@@ -329,10 +331,13 @@ if (commitMessageSave && commitMessageTextarea) {
   commitMessageSave.addEventListener("click", () => {
     const message = commitMessageTextarea.value.trim();
     chrome.storage.local.set({ customCommitMessage: message }, () => {});
-    showCommitMessageToast("Saved");
     if (commitMessageBody) {
       isCommitMessageOpen = false;
       commitMessageBody.style.display = "none";
+      document.body.classList.remove("commit-message-open");
+      if (commitMessageToggle) {
+        commitMessageToggle.classList.remove("is-open");
+      }
     }
   });
 }
@@ -341,11 +346,6 @@ if (commitMessageReset && commitMessageTextarea) {
   commitMessageReset.addEventListener("click", () => {
     commitMessageTextarea.value = "";
     chrome.storage.local.set({ customCommitMessage: "" }, () => {});
-    showCommitMessageToast("Reset");
-    if (commitMessageBody) {
-      isCommitMessageOpen = false;
-      commitMessageBody.style.display = "none";
-    }
   });
 }
 

@@ -9,11 +9,11 @@ const applyIndexDarkMode = (isDark) => {
 
 const syncIndexDarkModeFromStorage = () => {
   chrome.storage.local.get(["darkmodeFlag"], (data) => {
-    const isDarkByDefault = !data || data.darkmodeFlag === undefined;
-    const isDark = isDarkByDefault || data.darkmodeFlag === 1;
+    const isUnset = !data || data.darkmodeFlag === undefined;
+    const isDark = data && data.darkmodeFlag === 1;
 
-    if (isDarkByDefault) {
-      chrome.storage.local.set({ darkmodeFlag: 1 }, () => {});
+    if (isUnset) {
+      chrome.storage.local.set({ darkmodeFlag: 0 }, () => {});
     }
 
     applyIndexDarkMode(isDark);

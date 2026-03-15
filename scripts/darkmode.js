@@ -23,12 +23,11 @@ const applyDarkMode = (isDark) => {
 };
 
 chrome.storage.local.get(["darkmodeFlag"], (darkmodeData) => {
-  const isDarkByDefault =
-    !darkmodeData || darkmodeData.darkmodeFlag === undefined;
-  const isDark = isDarkByDefault || darkmodeData.darkmodeFlag === 1;
+  const isUnset = !darkmodeData || darkmodeData.darkmodeFlag === undefined;
+  const isDark = darkmodeData && darkmodeData.darkmodeFlag === 1;
 
-  if (isDarkByDefault) {
-    chrome.storage.local.set({ darkmodeFlag: 1 });
+  if (isUnset) {
+    chrome.storage.local.set({ darkmodeFlag: 0 });
   }
 
   applyDarkMode(isDark);

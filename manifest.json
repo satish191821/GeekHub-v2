@@ -3,7 +3,7 @@
   "name": "GeekHub v2",
   "description": "Automatically pushes your GeeksForGeeks solution to a GitHub Repository of your choice within seconds on successful submission.",
   "homepage_url": "https://github.com/satish191821/GeekHub-v2",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "author": "Atharva Nanavate",
   "action": {
     "default_icon": "assets/thumbnail.png",
