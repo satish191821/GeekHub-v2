@@ -1,0 +1,54 @@
+{
+  "manifest_version": 3,
+  "name": "GeekHub v2",
+  "description": "Automatically pushes your GeeksForGeeks solution to a GitHub Repository of your choice within seconds on successful submission.",
+  "homepage_url": "https://github.com/satish191821/GeekHub-v2",
+  "version": "2.0.4",
+  "author": "Atharva Nanavate",
+  "action": {
+    "default_icon": "assets/thumbnail.png",
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "16": "assets/logo_128x128.png",
+    "48": "assets/logo_128x128.png",
+    "128": "assets/logo_128x128.png"
+  },
+  "background": {
+    "service_worker": "scripts/background.js"
+  },
+  "permissions": ["scripting", "storage", "alarms", "tabs"],
+  "host_permissions": [
+    "https://github.com/*",
+    "https://api.github.com/*",
+    "https://practice.geeksforgeeks.org/*",
+    "https://www.geeksforgeeks.org/*"
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["scripts/extractCode.js", "scripts/nodeDeletion.js"],
+      "matches": [
+        "https://practice.geeksforgeeks.org/*",
+        "https://www.geeksforgeeks.org/*"
+      ]
+    }
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://github.com/login/device*"],
+      "js": ["scripts/githubDevicePage.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://practice.geeksforgeeks.org/*",
+        "https://www.geeksforgeeks.org/*"
+      ],
+      "js": ["scripts/geeksForGeeks.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "content_security_policy": {
+    "extension pages": "script-src 'self'; object-src 'self';"
+  }
+}

@@ -1,0 +1,392 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 24px 16px 56px;
+  background: linear-gradient(180deg, #f8fbff 0%, #eef4ff 100%);
+  color: #0f172a;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.total_div {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.dash-label {
+  color: #334155;
+}
+
+.dash-easy {
+  color: #16a34a;
+}
+
+.dash-medium {
+  color: #f59e0b;
+}
+
+.dash-hard {
+  color: #ef4444;
+}
+
+.dash-value {
+  color: #000000;
+}
+
+#solve_and_push_phase {
+  font-size: 1rem;
+  margin: 16px auto 0;
+  max-width: 1100px;
+  background: #ffffff;
+  border: 1px solid #dbe5f3;
+  border-radius: 14px;
+  padding: 16px 18px;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+}
+
+.heading {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  margin: 8px auto 8px;
+  letter-spacing: -0.02em;
+}
+
+.heading .brand-geek {
+  color: #111111;
+  font-weight: 800;
+}
+
+.heading .brand-hub {
+  color: #ff7a00;
+  font-weight: 800;
+}
+
+.heading .brand-v2 {
+  color: #111111;
+  font-size: 0.58em;
+  font-weight: 700;
+  margin-left: 10px;
+  align-self: center;
+}
+
+#gfglogo {
+  height: 0.7em !important;
+  margin-top: 0.15em;
+}
+
+#github_logo {
+  height: 0.8em !important;
+}
+
+.tagline {
+  font-size: clamp(1rem, 2.1vw, 1.25rem);
+  text-align: center;
+  margin: 0;
+  color: #475569;
+}
+
+.statistics {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.8;
+}
+
+.acknowledgement {
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 12px;
+  gap: 2px;
+}
+
+header .header {
+  background-color: #fff;
+}
+
+header a img {
+  width: 21em;
+  margin-top: 0.625em;
+}
+
+.link-repo-page {
+  width: min(100%, 1100px);
+  padding: 20px 0 0;
+  margin: auto;
+  font-size: 1rem;
+}
+
+.link-repo-page .form .link-repo {
+  margin-top: 0;
+}
+
+.form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  z-index: 1;
+  background: #ffffff;
+  width: min(100%, 920px);
+  margin: 0 auto;
+  padding: 26px;
+  text-align: left;
+  border-radius: 16px;
+  border: 1px solid #dbe5f3;
+  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.1);
+}
+
+.form h3 {
+  text-align: center;
+  font-size: clamp(1.2rem, 2.2vw, 1.55rem);
+  margin: 6px 0 8px;
+}
+
+.form p {
+  font-size: clamp(0.95rem, 1.7vw, 1.08rem);
+  margin: 6px 0 10px;
+  color: #334155;
+}
+
+.form input {
+  outline: 0;
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  margin: 0 0 1rem;
+  padding: 0.82rem 0.95rem;
+  box-sizing: border-box;
+  font-size: 1rem;
+  border-radius: 10px;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+input[type="radio"] + label {
+  font-weight: 500;
+  font-size: 1.02rem;
+  color: #1f2937;
+}
+
+input[type="radio"] + label span {
+  display: inline-block;
+  width: 1.05rem;
+  height: 1.05rem;
+  margin: -0.14rem 0.5rem 0 0;
+  vertical-align: middle;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 0.18rem solid #2f8d46;
+  background-color: #fff;
+  transition: background-color 0.24s linear;
+}
+
+input[type="radio"]:checked + label {
+  color: #0f172a;
+  font-weight: 700;
+}
+
+input[type="radio"]:checked + label span {
+  background-color: #2f8d46;
+  box-shadow: 0 0 0 3px rgba(47, 141, 70, 0.2);
+}
+
+#repositoryNameTextField {
+  width: 100%;
+  border-radius: 10px;
+  padding: 0.82rem 0.95rem;
+  font-size: 1rem;
+}
+
+.form button {
+  text-transform: none;
+  outline: 0;
+  background: linear-gradient(135deg, #16a34a, #15803d);
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid rgba(21, 128, 61, 0.4);
+  padding: 0.9rem;
+  color: #ffffff;
+  font-size: 1.02rem;
+  font-weight: 700;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+  cursor: pointer;
+  box-shadow: 0 10px 18px rgba(22, 163, 74, 0.24);
+}
+
+.form button:hover {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  transform: translateY(-1px);
+}
+
+.form .message {
+  margin: 14px 0 0;
+  color: #64748b;
+  font-size: 0.95rem;
+}
+
+.form .message a {
+  color: #16a34a;
+  text-decoration: none;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 47em;
+  margin: 0 auto;
+}
+
+#radio_group {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+}
+
+.star_on_github {
+  margin: 18px auto 0;
+  text-align: center;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.star_on_github a {
+  text-decoration: none;
+  color: rgb(4, 131, 186);
+}
+
+#error_info {
+  font-size: 0.98rem;
+  font-weight: normal !important;
+  color: #dc2626 !important;
+}
+
+#success_acknowledgement {
+  font-size: 0.98rem;
+  font-weight: normal !important;
+  color: #16a34a !important;
+}
+
+#unlinkRepository {
+  font-size: 0.98rem;
+  font-weight: normal !important;
+  color: #16a34a !important;
+}
+
+#unlinkRepository a {
+  text-decoration: underline;
+  color: #1d4ed8;
+  cursor: pointer;
+}
+
+#particles-js {
+  position: fixed;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+@media (max-width: 860px) {
+  body {
+    padding: 18px 10px 36px;
+  }
+
+  .form {
+    padding: 18px;
+  }
+
+  .statistics {
+    line-height: 1.65;
+  }
+
+  .star_on_github {
+    font-size: 0.95rem;
+  }
+}
+
+body.dark-mode {
+  background: linear-gradient(180deg, #0f172a 0%, #111827 100%);
+  color: #e2e8f0;
+}
+
+body.dark-mode .tagline {
+  color: #cbd5e1;
+}
+
+body.dark-mode #solve_and_push_phase,
+body.dark-mode .form {
+  background: #1f2937;
+  border-color: #334155;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .form p,
+body.dark-mode input[type="radio"] + label {
+  color: #e5e7eb;
+}
+
+body.dark-mode .form input,
+body.dark-mode #repositoryNameTextField {
+  background: #0f172a;
+  border-color: #475569;
+  color: #e5e7eb;
+}
+
+body.dark-mode .acknowledgement,
+body.dark-mode #unlinkRepository,
+body.dark-mode #success_acknowledgement {
+  color: #86efac !important;
+}
+
+body.dark-mode #error_info {
+  color: #fca5a5 !important;
+}
+
+body.dark-mode #unlinkRepository a,
+body.dark-mode .star_on_github a {
+  color: #60a5fa;
+}
+
+body.dark-mode .star_on_github a span {
+  color: #e2e8f0 !important;
+}
+
+body.dark-mode .heading .brand-geek,
+body.dark-mode .heading .brand-v2 {
+  color: #f8fafc;
+}
+
+body.dark-mode .dash-label {
+  color: #cbd5e1;
+}
+
+body.dark-mode .dash-easy {
+  color: #4ade80;
+}
+
+body.dark-mode .dash-medium {
+  color: #fbbf24;
+}
+
+body.dark-mode .dash-hard {
+  color: #f87171;
+}
+
+body.dark-mode .dash-value {
+  color: #ffffff;
+}

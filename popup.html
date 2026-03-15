@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/popup.css" />
+    <script
+      src="./scripts/jquery-3.6.1.min.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <button id="hamburger_toggle" type="button" aria-label="Open menu">
+      ☰
+    </button>
+    <div id="hamburger_menu" style="display: none">
+      <p id="menu_title">Menu</p>
+      <div id="menu_actions">
+        <a id="index_URL" class="menu_link" href="" target="_blank"
+          >Open Dashboard</a
+        >
+        <div id="repo_structure_control">
+          <span>Path</span>
+          <select id="repo_structure_select">
+            <option value="difficulty-first">Difficulty → Problem</option>
+            <option value="problem-first">Problem → Difficulty</option>
+          </select>
+        </div>
+        <button id="reset_stats_button" type="button">Reset Stats</button>
+        <button id="toggle_recent_button" type="button">Hide Recent</button>
+        <button id="reset_recent_button" type="button">Reset Recent</button>
+      </div>
+      <div id="danger_zone">
+        <p id="danger_zone_title">Danger Zone</p>
+        <button id="reset_all_button" type="button">Reset Everything</button>
+      </div>
+    </div>
+    <div class="header">
+      <h1 id="ext_name">
+        <span class="brand-geek">Geek</span><span class="brand-hub">Hub</span>
+        <span class="brand-v2">v2</span>
+      </h1>
+      <p id="tagline">Sync GfG solutions to GitHub</p>
+      <hr />
+      <div id="repo_row" style="display: none">
+        <span class="row_label">Repo</span><span id="repository_link"></span>
+      </div>
+    </div>
+
+    <div id="authentication_phase" style="display: none">
+      <p class="instructions auth_title">Connect GitHub to get started</p>
+      <p class="instructions auth_subtitle">
+        GeekHub opens GitHub in a new tab and finishes setup automatically.
+      </p>
+      <button id="authentication_button">
+        <img
+          id="githublogo_button"
+          class="github_logo"
+          src="./assets/github.png"
+          alt="GfG Logo"
+        /><span>&nbsp;Connect GitHub</span>
+      </button>
+      <p id="device_auth_status" class="instructions auth_status_text">
+        <span id="device_auth_status_spinner" class="status_spinner"></span>
+        <span id="device_auth_status_text">Ready to connect.</span>
+      </p>
+      <div id="device_auth_help" style="display: none">
+        <p class="instructions auth_help_title">
+          Manual fallback if GitHub asks for a device code:
+        </p>
+        <div id="device_auth_code">----</div>
+        <div id="device_auth_actions">
+          <a id="open_device_verification" href="" target="_blank"
+            >Open verification page</a
+          >
+          <button id="copy_device_code" type="button">Copy code</button>
+        </div>
+        <div id="device_auth_manage_actions">
+          <button id="retry_device_auth" type="button">Retry</button>
+          <button id="cancel_device_auth" type="button">Cancel</button>
+        </div>
+      </div>
+      <button
+        id="toggle_device_auth_help"
+        type="button"
+        class="subtle_button"
+        style="display: none"
+      >
+        Show manual code option
+      </button>
+      <hr />
+    </div>
+
+    <div id="link_repo_phase" style="display: none">
+      <p class="instructions">Link a GitHub Repository.</p>
+      <button>
+        <a id="link_repo_redirect" href="" target="_blank">
+          <img
+            id="githublogo_button"
+            class="github_logo"
+            src="./assets/github.png"
+            alt="GfG Logo"
+          /><span>&nbsp;Link Repository</span></a
+        >
+      </button>
+      <hr />
+    </div>
+
+    <div id="solve_and_push_phase" style="display: none">
+      <div id="sync_mode_control">
+        <span id="sync_mode_text">Auto-Commit</span>
+        <label class="switch" for="sync_mode_toggle">
+          <input type="checkbox" id="sync_mode_toggle" />
+          <span class="slider round"></span>
+        </label>
+        <span id="sync_mode_label">Manual</span>
+      </div>
+      <p class="instructions" id="summary_count">
+        Solved <span id="successful_submissions">0</span>
+      </p>
+      <div class="solved" id="difficulty_chips">
+        <span class="diff_chip chip-basic"
+          ><span class="chip_key">Basic</span
+          ><span class="chip_value" id="successful_submissions_basic"
+            >0</span
+          ></span
+        >
+        <span class="diff_chip chip-easy"
+          ><span class="chip_key">Easy</span
+          ><span class="chip_value" id="successful_submissions_easy"
+            >0</span
+          ></span
+        >
+        <span class="diff_chip chip-medium"
+          ><span class="chip_key">Medium</span
+          ><span class="chip_value" id="successful_submissions_medium"
+            >0</span
+          ></span
+        >
+        <span class="diff_chip chip-hard"
+          ><span class="chip_key">Hard</span
+          ><span class="chip_value" id="successful_submissions_hard"
+            >0</span
+          ></span
+        >
+      </div>
+      <div id="commit_message_section">
+        <button id="commit_message_toggle" type="button">
+          Customize Commit Message
+        </button>
+        <div id="commit_message_body" style="display: none">
+          <textarea
+            id="commit_message_textarea"
+            placeholder="Enter your commit message"
+            rows="3"
+          ></textarea>
+          <div id="commit_message_actions">
+            <button id="commit_message_reset" type="button">Reset</button>
+            <button id="commit_message_save" type="button">Save</button>
+          </div>
+          <div id="commit_message_toast" role="status" aria-live="polite"></div>
+        </div>
+      </div>
+      <div id="sync_history_panel">
+        <div id="sync_history_header">
+          <p id="sync_history_title">Recent</p>
+          <button id="sync_history_toggle" type="button" style="display: none">
+            More
+          </button>
+        </div>
+        <ul id="sync_history_list"></ul>
+      </div>
+      <hr />
+    </div>
+    <div id="darkmode">
+      <button id="darkmode-button" type="button" aria-label="Toggle dark mode">
+        🌙
+      </button>
+    </div>
+    <div id="dev_contact">
+      <span id="github"
+        ><a href="https://github.com/satish191821/GeekHub-v2" target="_blank"
+          ><img
+            class="github_logo"
+            src="./assets/github.png"
+            alt="Github Logo" /></a
+      ></span>
+      <span id="mail"
+        ><a href="mailto:satishworld191821@gmail.com" target="_blank"
+          ><img id="mail_logo" src="./assets/mail_light.png" alt="Mail" /></a
+      ></span>
+    </div>
+    <div class="footer-note">Made with ♥ </div>
+    <script src="scripts/darkmode.js"></script>
+    <script src="scripts/githubAuthentication.js"></script>
+    <script type="text/javascript" src="popup.js"></script>
+  </body>
+</html>
+
+<style>
+  .footer-note {
+    text-align: center;
+    padding-top: 10px;
+    font-size: 12px;
+    color: #888;
+  }
+</style>
