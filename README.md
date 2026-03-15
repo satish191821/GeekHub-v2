@@ -1,4 +1,4 @@
-<p align="center"><img src="https://raw.githubusercontent.com/satish191821/GeekHub-v2/main/Illustrations/logo_500x500.png" alt="GeekHub logo." width="200"></a></p>
+
 <p align="center">
   <a href="LICENSE">
     <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="MIT License"/>
@@ -8,9 +8,7 @@
 
 # <p align="center">GeekHub v2</p>
 
-> Fork attribution: Original project by [Atharva Nanavate](https://github.com/AtharvaNanavate/GfG-To-GitHub).
-
-This Chrome Extension syncs your GeeksForGeeks problem solutions to a GitHub repository. It helps you centralize your solutions, track your progress, and build your GitHub portfolio.
+This Chrome Extension syncs your GeeksForGeeks problem solutions to a GitHub repository. It helps you centralize your solutions, track your progress, and build your GitHub portfolio🚀.
 
 ## Installation
 
@@ -43,26 +41,29 @@ This Chrome Extension syncs your GeeksForGeeks problem solutions to a GitHub rep
 ### Popup Screens
 
 - Authorization (device auth / connect state)
-<p align="center"><img src="https://raw.githubusercontent.com/satish191821/GeekHub-v2/main/Illustrations/pop-up-authorization-page.png" alt="Popup authorization" width="500"></a></p>
+<p align="center"><img src="Illustrations/pop-up-authorization-page.png" alt="Popup authorization" width="500"></p>
 
+### Wait 5 seconds after authorization then 
+
+- Create or link repository (home page)
+<p align="center"><img src="Illustrations/link-create-repo-page.png" alt="Create or link repository" width="700"></p>
+
+-(OR)
 - Link repository (popup)
-<p align="center"><img src="https://raw.githubusercontent.com/satish191821/GeekHub-v2/main/Illustrations/link-repo-popup.png" alt="Popup link repository" width="500"></a></p>
+<p align="center"><img src="Illustrations/link-repo-popup.png" alt="Popup link repository" width="500"></p>
 
 - Dashboard (popup)
-<p align="center"><img src="https://raw.githubusercontent.com/satish191821/GeekHub-v2/main/Illustrations/Dashboard-popup.png" alt="Popup dashboard" width="500"></a></p>
+<p align="center"><img src="Illustrations/Dashboard-popup.png" alt="Popup dashboard" width="500"></p>
 
 - Hamburger menu (popup)
-<p align="center"><img src="https://raw.githubusercontent.com/satish191821/GeekHub-v2/main/Illustrations/hamburger-menu-popup.png" alt="Popup hamburger menu" width="500"></a></p>
+<p align="center"><img src="Illustrations/hamburger-menu-popup.png" alt="Popup hamburger menu" width="500"></p>
 
 ### Dashboard Screens
 
-- Create or link repository (home page)
-<p align="center"><img src="https://raw.githubusercontent.com/satish191821/GeekHub-v2/main/Illustrations/link-create-repo-page.png" alt="Create or link repository" width="700"></a></p>
-
 - Dashboard (home page)
-<p align="center"><img src="https://raw.githubusercontent.com/satish191821/GeekHub-v2/main/Illustrations/Dashboard.png" alt="Home page dashboard" width="700"></a></p>
+<p align="center"><img src="Illustrations/Dashboard.png" alt="Home page dashboard" width="700"></p>
 
 ### In-Problem Experience
 
 - Manual sync button on problem page
-<p align="center"><img src="https://raw.githubusercontent.com/satish191821/GeekHub-v2/main/Illustrations/manual-sync.png" alt="Manual sync button" width="700"></a></p>
+<p align="center"><img src="Illustrations/manual-sync.png" alt="Manual sync button" width="700"></p>
