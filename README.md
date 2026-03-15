@@ -45,6 +45,12 @@ This Chrome Extension syncs your GeeksForGeeks problem solutions to a GitHub rep
 - Authorization (device auth / connect state)
 <p align="center"><img src="https://raw.githubusercontent.com/satish191821/GeekHub-v2/main/Illustrations/pop-up-authorization-page.png" alt="Popup authorization" width="500"></a></p>
 
+### Wait 5 secounds after authorisation then 
+
+- Create or link repository (home page)
+<p align="center"><img src="https://raw.githubusercontent.com/satish191821/GeekHub-v2/main/Illustrations/link-create-repo-page.png" alt="Create or link repository" width="700"></a></p>
+
+-(OR)
 - Link repository (popup)
 <p align="center"><img src="https://raw.githubusercontent.com/satish191821/GeekHub-v2/main/Illustrations/link-repo-popup.png" alt="Popup link repository" width="500"></a></p>
 
@@ -55,9 +61,6 @@ This Chrome Extension syncs your GeeksForGeeks problem solutions to a GitHub rep
 <p align="center"><img src="https://raw.githubusercontent.com/satish191821/GeekHub-v2/main/Illustrations/hamburger-menu-popup.png" alt="Popup hamburger menu" width="500"></a></p>
 
 ### Dashboard Screens
-
-- Create or link repository (home page)
-<p align="center"><img src="https://raw.githubusercontent.com/satish191821/GeekHub-v2/main/Illustrations/link-create-repo-page.png" alt="Create or link repository" width="700"></a></p>
 
 - Dashboard (home page)
 <p align="center"><img src="https://raw.githubusercontent.com/satish191821/GeekHub-v2/main/Illustrations/Dashboard.png" alt="Home page dashboard" width="700"></a></p>
