@@ -1,4 +1,4 @@
-<p align="center"><img src="Illustrations/logo_500x500.png" alt="GeekHub logo." width="200"></a></p>
+
 <p align="center">
   <a href="LICENSE">
     <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="MIT License"/>
