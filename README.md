@@ -5,11 +5,6 @@
   </a>
 
 </p>
-<p align="center">
-<a href="https://chrome.google.com/webstore/detail/gfg-to-github/gojabhkegjnlnklkkpkglaembhlknkgk">
-    <img src="https://user-images.githubusercontent.com/53124886/111952712-34f12300-8aee-11eb-9fdd-ad579a1eb235.png" alt="Chrome-Webstore-Logo"/>
-  </a>
-</p>
 
 # <p align="center">GeekHub v2</p>
 
