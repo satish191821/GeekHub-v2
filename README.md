@@ -8,8 +8,6 @@
 
 # <p align="center">GeekHub v2</p>
 
-> Fork attribution: Original project by [Atharva Nanavate](https://github.com/AtharvaNanavate/GfG-To-GitHub).
-
 This Chrome Extension syncs your GeeksForGeeks problem solutions to a GitHub repository. It helps you centralize your solutions, track your progress, and build your GitHub portfolio.
 
 ## Installation
